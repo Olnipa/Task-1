@@ -10,12 +10,13 @@ namespace Variety
             int characterLevel;
             float characterMovementSpeed;
             bool checkEnoughMoney;
-            int characterMoney;
-            string levelName;
+            sbyte parkingLevel;
+            ulong characterMoney;
             byte backpackCapacity;
-            int healingPotionPrice;
-            int damageCharacterBarney;
-            int armorGordonFreemen;
+            char whereBombPlanted;
+            uint healingPotionPrice;
+            ulong damageToCharacterBarney;
+            ushort armorOfGordonFreemen;
         }
     }
 }
