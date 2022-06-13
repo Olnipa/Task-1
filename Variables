@@ -9,14 +9,13 @@ namespace Variety
             string characterName;
             int characterLevel;
             float characterMovementSpeed;
-            bool checkEnouthMoney;
+            bool checkEnoughMoney;
             int characterMoney;
             string levelName;
             byte backpackCapacity;
             int healingPotionPrice;
             int damageCharacterBarney;
             int armorGordonFreemen;
-
         }
     }
 }
