@@ -1,0 +1,22 @@
+using System;
+
+namespace Variety
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string characterName;
+            int characterLevel;
+            float characterMovementSpeed;
+            bool checkEnouthMoney;
+            int characterMoney;
+            string levelName;
+            byte backpackCapacity;
+            int healingPotionPrice;
+            int damageCharacterBarney;
+            int armorGordonFreemen;
+
+        }
+    }
+}
