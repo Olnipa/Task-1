@@ -1,0 +1,22 @@
+            Console.Write("Здравствуйте! Сегодня вы попали на порносайт с картинками. " +
+                "Для максимально эффективного использования сайта пожалуйста, укажите желаемую ширину картинок. Напоминаю, что всего их 52 шт. Все размеры указывайте в пикселях. " +
+                "Итак, ведите желаемую ширину картинок: ");
+            int pictureWidth = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Также нам понадобится требуемая высота картинок. Введите ее тут, используя клавиатуру: ");
+            int pictureHeight = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Введите ширину вашего экрана, пожалуйста: ");
+            int screenWidth = Convert.ToInt32(Console.ReadLine());
+            Console.Write("А сюда введите высоту вашего экрана: ");
+            int screenHeight = Convert.ToInt32(Console.ReadLine());
+
+            //Проверяем, сколько картинок поместится в один ряд
+
+            int picturesInStroke = screenWidth / pictureWidth;
+            Console.WriteLine(picturesInStroke);
+
+            //Проверяем, сколько поместится рядов картинок
+
+            Boolean checkpicturesInStroke = picturesInStroke > 0;
+            Console.WriteLine(checkpicturesInStroke);
+            int quantityOfStrokes = Convert.ToInt32(checkpicturesInStroke)*(screenHeight / pictureHeight);
+            Console.WriteLine(quantityOfStrokes);
