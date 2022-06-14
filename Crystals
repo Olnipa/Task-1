@@ -1,0 +1,24 @@
+using System;
+
+namespace Variety
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Рад приветствовать тебя, дорогой путник, в таверне Кристаллы от Романа. Скажи, сколько монет ты несешь в своих карманах?");
+            Console.Write("Ответьте торговцу, сколько монет у Вас с собой: ");
+            int money = Convert.ToInt32(Console.ReadLine());
+            int crystalsInBackpack = 0;
+            Console.WriteLine("Ого! Впечатляет! Ты наверно как и большинство таких же путников пришел ко мне за кристаллами, да? Сколько кристаллов ты хочешь купить?");
+            Console.Write("Напишите торговцу, сколько кристаллов вы хотите приобрести: ");
+            int crystalToBuy = Convert.ToInt32(Console.ReadLine());
+            int crystalPrice = 17000;
+            Console.WriteLine($"Вижу что вы человек обеспеченный, но предупреждаю что мои кристаллы очень ценны. Их стоимость - {crystalPrice} монет за штуку.");
+
+            money -= crystalPrice * crystalToBuy;
+            crystalsInBackpack += crystalToBuy;
+            Console.WriteLine($"Остаток монет: {money} шт. Остаток кристаллов: {crystalsInBackpack} шт.");
+        }
+    }
+}
