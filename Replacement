@@ -1,0 +1,20 @@
+using System;
+
+namespace Variety
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string name = "Sokolov";
+            string surname = "Yakov";
+            Console.WriteLine($"Ваше имя: {name}. Ваша фамилия: {surname}.");
+            
+            string temporaryMemory;
+            temporaryMemory = name;
+            name = surname;
+            surname = temporaryMemory;
+            Console.WriteLine($"Ваше имя: {name}. Ваша фамилия: {surname}.");
+        }
+    }
+}
