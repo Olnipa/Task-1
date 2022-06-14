@@ -1,22 +1,41 @@
-            Console.Write("Здравствуйте! Сегодня вы попали на порносайт с картинками. " +
-                "Для максимально эффективного использования сайта пожалуйста, укажите желаемую ширину картинок. Напоминаю, что всего их 52 шт. Все размеры указывайте в пикселях. " +
-                "Итак, ведите желаемую ширину картинок: ");
+using System;
+
+namespace Variety
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int totalPicturesQuantity = 52;
+            int picturesInOneRaw = 3;
+            Console.WriteLine("Здравствуйте! Сегодня вы попали на сайт с картинками обнаженных девушек. " +
+                "Для максимально эффективного использования сайта пожалуйста, укажите желаемую ширину картинок. " +
+                "Всего их у нас " + totalPicturesQuantity + " шт. Желаемые размеры картинок указывайте пожалуйста в пикселях. ");
+            Console.Write("Итак, ведите желаемую ширину картинок: ");
             int pictureWidth = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Также нам понадобится требуемая высота картинок. Введите ее тут, используя клавиатуру: ");
+            Console.Write("Также понадобится высота картинок. Введите ее тут: ");
             int pictureHeight = Convert.ToInt32(Console.ReadLine());
             Console.Write("Введите ширину вашего экрана, пожалуйста: ");
             int screenWidth = Convert.ToInt32(Console.ReadLine());
             Console.Write("А сюда введите высоту вашего экрана: ");
             int screenHeight = Convert.ToInt32(Console.ReadLine());
-
-            //Проверяем, сколько картинок поместится в один ряд
-
-            int picturesInStroke = screenWidth / pictureWidth;
-            Console.WriteLine(picturesInStroke);
-
-            //Проверяем, сколько поместится рядов картинок
-
-            Boolean checkpicturesInStroke = picturesInStroke > 0;
-            Console.WriteLine(checkpicturesInStroke);
-            int quantityOfStrokes = Convert.ToInt32(checkpicturesInStroke)*(screenHeight / pictureHeight);
-            Console.WriteLine(quantityOfStrokes);
+            Console.WriteLine();
+            //Сколько полностью заполненных рядов можно будет вывести
+            bool checkEnoughScreenWidth = screenWidth >= pictureWidth * picturesInOneRaw;
+            bool checkEnoughScreenHeight = screenHeight >= pictureHeight;
+            int rawQuantity = Convert.ToInt32(checkEnoughScreenWidth) * Convert.ToInt32(checkEnoughScreenHeight) * screenHeight / pictureHeight;
+            int maxRawQuantity = totalPicturesQuantity / picturesInOneRaw;
+            bool checkMaxRawsQuantity = maxRawQuantity > rawQuantity;
+            bool checkMinRawsQuantity = maxRawQuantity <= rawQuantity;
+            rawQuantity = rawQuantity * Convert.ToInt32(checkMaxRawsQuantity) + (maxRawQuantity * Convert.ToInt32(checkMinRawsQuantity));
+            Console.WriteLine("При условии что в одном ряду будет " + picturesInOneRaw +
+                " картинки, полностью заполненных рядов будет " + rawQuantity + " шт.");
+            //Сколько картинок окажется больше чем нужно
+            int tooMuchPicturesQuantity = totalPicturesQuantity - rawQuantity * picturesInOneRaw;
+            bool checkEnoughtPictures = tooMuchPicturesQuantity >= 0;
+            tooMuchPicturesQuantity *= Convert.ToInt32(checkEnoughtPictures);
+            Console.WriteLine("Исходя из указанных данных непоместившихся картинок будет: " + tooMuchPicturesQuantity + " шт.");
+            Console.WriteLine("Приятного просмотра!");
+        }
+    }
+}
