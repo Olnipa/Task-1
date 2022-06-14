@@ -1,0 +1,22 @@
+using System;
+
+namespace Variety
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Вы пришли в поликлинику. Тут куча старушек. После легкого разочарования Вы решили посчитать количество старушек перед вами. ");
+            Console.Write("Напишите, сколько старушек вы насчитали: ");
+            int grandmothersQuantity = Convert.ToInt32(Console.ReadLine());
+
+            int timeMeetingInMinute = 10;
+            int minutesInHour = 60;
+
+            int totalElapsTimeInMinutes = timeMeetingInMinute * grandmothersQuantity;
+            int elapsTimeInHours = totalElapsTimeInMinutes / minutesInHour;
+            int elapsTimeInMinutes = totalElapsTimeInMinutes % minutesInHour;
+            Console.WriteLine($"Учитывая что на прием одной старушки обычно уходит {timeMeetingInMinute} минут, то до приема к врачу вам осталось подождать {elapsTimeInHours} часа и {elapsTimeInMinutes} минут. Потерпите. Старушки бывают очень милые.");
+        }
+    }
+}
